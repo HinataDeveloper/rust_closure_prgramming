@@ -1,2 +1,3 @@
-# rust_closure_prgramming
-Learning Rust Closuer Programming
+# Rust Language Closure Programming
+
+## Learning Closure Programming by Rust

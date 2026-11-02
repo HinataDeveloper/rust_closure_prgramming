@@ -1,0 +1,48 @@
+// main.rs
+// Date: Thu Oct 29 2026
+// Educational and Practice Rust Programming Language Code
+
+// Project: Learning Closure Programming
+// Goal: Creating FnOne closure. Move data out of its body
+// Dependency: Without any dependency
+
+// rustc 1.101.0-nightly (16d1ffac1 2026-10-26)
+// binary: rustc
+// commit-hash: 16d1ffac17ad8b739e32483ac2e65fe7e1804977
+// commit-date: 2026-10-26
+// host: x86_64-unknown-linux-gnu
+// release: 1.101.0-nightly
+// LLVM version: 23.1.4
+//
+// cargo 1.101.0-nightly (cad07cf8e 2026-10-23)
+// release: 1.101.0-nightly
+// commit-hash: cad07cf8e597397fff5d0f6cb79c9f870c0b1dd2
+// commit-date: 2026-10-23
+// host: x86_64-unknown-linux-gnu
+// libgit2: 1.9.6 (sys:0.21.0 vendored)
+// libcurl: 8.21.0-DEV (sys:0.4.90+curl-8.21.0 vendored ssl:OpenSSL/3.6.3)
+// ssl: OpenSSL 3.6.3 9 Jun 2026
+// os: Fedora 44.0.0 [64-bit]
+
+// Kernel Version: 7.2.13-200.fc44.x86_64
+// Firmware Version: 71CN51WW(V1.21)
+fn main() {
+    println!("\n");
+
+    // The only closure that can moves value out of its body is FnOnce
+    let closure_one = |data: i32| -> i32 { data + 300 };
+
+    let result_one = closure_one(200);
+    let result_two = closure_one(300);
+    let result_three = closure_one(400);
+    let result_four = closure_one(500);
+    let result_five = closure_one(600);
+
+    println!("result one: {result_one}");
+    println!("result two: {result_two}");
+    println!("result three: {result_three}");
+    println!("result four: {result_four}");
+    println!("result five: {result_five}");
+
+    println!("\nThe End ...\n");
+}

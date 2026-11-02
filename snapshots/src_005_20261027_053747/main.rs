@@ -1,0 +1,50 @@
+// main.rs
+// Date: Tue Oct 27 2026
+// Educational and Practice Rust Programming Language Code
+
+// Project: Learning Closure Programming
+// Goal: ...
+// Dependency: Without any dependency
+
+// rustc 1.101.0-nightly (7189d39d9 2026-10-22)
+// binary: rustc
+// commit-hash: 7189d39d9ce936881b8132c6addeaf3e295cd455
+// commit-date: 2026-10-22
+// host: x86_64-unknown-linux-gnu
+// release: 1.101.0-nightly
+// LLVM version: 23.1.4
+
+// cargo 1.101.0-nightly (15be64aa0 2026-10-20)
+// release: 1.101.0-nightly
+// commit-hash: 15be64aa0859b5c36f7a86d52f7aa0db44ba4d84
+// commit-date: 2026-10-20
+// host: x86_64-unknown-linux-gnu
+// libgit2: 1.9.6 (sys:0.21.0 vendored)
+// libcurl: 8.21.0-DEV (sys:0.4.90+curl-8.21.0 vendored ssl:OpenSSL/3.6.3)
+// ssl: OpenSSL 3.6.3 9 Jun 2026
+// os: Fedora 44.0.0 [64-bit]
+
+// Kernel Version: 7.2.11-200.fc44.x86_64
+// Firmware Version: 71CN51WW(V1.21)
+
+fn main() {
+    println!("\n");
+
+    let mut numbers: Vec<i32> = vec![1, 2, 3, 4, 5];
+    println!("numbers vector before defining closure: {numbers:?}");
+
+    let mut closure_one = |n: i32| numbers.push(n);
+
+    closure_one(6);
+    closure_one(7);
+    closure_one(8);
+    
+    // Encounter with compile time error:
+    // When mutable borrowing is active it can not jbe used immutable borrow 
+    // println!("numbers vector after defining closure: {numbers:?}");
+
+    closure_one(9);
+    println!("numbers vector after defining closure: {numbers:?}");
+
+    println!("\nThe End ...\n");
+}
