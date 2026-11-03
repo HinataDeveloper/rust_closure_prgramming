@@ -2,6 +2,6 @@
 
     # Borrowing immutably.
     # Borrowing mutably.
-    # Taking ownership.
+    # Taking ownership..
 
    [capture by reference]
